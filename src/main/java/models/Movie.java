@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 public class Movie extends BaseModel{
     String name;
-    List<String> actors;
+//    List<String> actors;
 }
 
 // Models -> Tables : atomicity

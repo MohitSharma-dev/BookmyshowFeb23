@@ -1,6 +1,8 @@
 package models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +11,8 @@ import lombok.Setter;
 @Entity
 public class Seat extends BaseModel{
     private String seatNumber;
-    private int row;
-    private int col;
+    private int rowVal;
+    private int colVal;
+    @ManyToOne
     private SeatType seatType;
 }
