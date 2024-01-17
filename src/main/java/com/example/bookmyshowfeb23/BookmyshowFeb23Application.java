@@ -1,6 +1,5 @@
 package com.example.bookmyshowfeb23;
 
-import models.BaseModel;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

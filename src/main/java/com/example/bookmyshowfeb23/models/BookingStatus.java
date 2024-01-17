@@ -1,4 +1,4 @@
-package models;
+package com.example.bookmyshowfeb23.models;
 
 public enum BookingStatus {
     CONFIRMED,

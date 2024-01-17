@@ -1,4 +1,4 @@
-package models;
+package com.example.bookmyshowfeb23.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;
@@ -28,3 +28,6 @@ public class ShowSeat extends BaseModel{
 // 1 7 --
 // 2 5
 // 3 5
+
+// 1 ShowSeat object => 1 show * 1 seat
+// 1 show => how many showSeat object ? Multiple

@@ -1,4 +1,4 @@
-package models;
+package com.example.bookmyshowfeb23.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "users")
 public class User extends BaseModel{
     private String name;
     private String email;
