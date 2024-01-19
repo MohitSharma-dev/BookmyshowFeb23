@@ -23,18 +23,20 @@ public class BookingService {
     private ShowRepository showRepository;
     private ShowSeatRepository showSeatRepository;
     private BookingRepository bookingRepository;
-
+    private PriceCalculatorService priceCalculatorService;
     @Autowired
     public BookingService(
             UserRepository userRepository,
             ShowRepository showRepository,
             ShowSeatRepository showSeatRepository,
-            BookingRepository bookingRepository
+            BookingRepository bookingRepository,
+            PriceCalculatorService priceCalculatorService
     ){
         this.userRepository = userRepository;
         this.showRepository = showRepository;
         this.showSeatRepository = showSeatRepository;
         this.bookingRepository = bookingRepository;
+        this.priceCalculatorService = priceCalculatorService;
     }
     @Transactional(isolation =  Isolation.SERIALIZABLE)
     public Booking bookTicket(
@@ -84,7 +86,7 @@ public class BookingService {
         booking.setShow(savedShow);
         booking.setUser(bookedBy);
         booking.setShowSeats(savedShowSeats);
-        booking.setAmount(0);
+        booking.setAmount(priceCalculatorService.calculatePrice(savedShowSeats , savedShow));
         booking.setPayments(new ArrayList<>());
         // 9. save it in the db
         // 10. return the Booking object

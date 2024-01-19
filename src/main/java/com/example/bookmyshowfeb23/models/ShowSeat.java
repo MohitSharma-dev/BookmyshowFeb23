@@ -21,6 +21,8 @@ public class ShowSeat extends BaseModel{
     Date blockedAt;
 
 }
+// 1 5 available
+// 3 5
 
 // ShowSeat * Show
 // 1 : 1
